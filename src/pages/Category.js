@@ -1,11 +1,9 @@
 import React from 'react';
 
-const Category = () => {
-    return (
-        <div>
-            <button>Check status</button>
-        </div>
-    )
-}
+const Category = () => (
+  <div>
+    <button type="submit">Check status</button>
+  </div>
+);
 
 export default Category;
