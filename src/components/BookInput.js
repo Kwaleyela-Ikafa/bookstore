@@ -8,6 +8,7 @@ const AddBook = () => (
       <input type="text" placeholder="Book author" />
       <button type="submit">Add Book</button>
     </form>
+
   </>
 );
 

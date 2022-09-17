@@ -1,14 +1,18 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import propTypes from 'prop-types';
 
-const Book = ({ title, author }) => (
-  <>
-    <div className="book-container">
-      <h2>{title}</h2>
-      <h2>{author}</h2>
-      <button type="submit">Remove</button>
-    </div>
-  </>
+const Book = ({ id, title, author }) => (
+  <li key={id}>
+    <p>{title}</p>
+    <p>{author}</p>
+    <button type="submit">Remove</button>
+  </li>
 );
+
+Book.propTypes = {
+  id: propTypes.number.isRequired,
+  title: propTypes.string.isRequired,
+  author: propTypes.string.isRequired,
+};
 
 export default Book;
