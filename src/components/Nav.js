@@ -5,7 +5,7 @@ import {
   Route,
   Link,
 } from 'react-router-dom';
-import Category from '../pages/Category';
+import Category from '../redux/categories/Category';
 
 const Nav = () => (
   <Router>
