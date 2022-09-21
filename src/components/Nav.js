@@ -24,7 +24,7 @@ const Nav = () => (
         </nav>
       </header>
       <Routes>
-        <Route path="/Category" element={<Category />} />
+        <Route path="../redux/categories/Category" element={<Category />} />
       </Routes>
     </div>
   </Router>

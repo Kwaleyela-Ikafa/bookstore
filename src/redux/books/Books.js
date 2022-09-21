@@ -3,7 +3,23 @@ export const ADD_BOOK = 'books/Books/ADD_BOOK';
 export const REMOVE_BOOK = 'books/Books/REMOVE_BOOK';
 
 // Set Initial State
-const initialState = [];
+const initialState = [
+  // {
+  //   id: 1,
+  //   author: 'JK Rowling',
+  //   title: 'Harry Porter',
+  // },
+  // {
+  //   id: 2,
+  //   author: 'Frank Herbert',
+  //   title: 'Dune',
+  // },
+  // {
+  //   id: 3,
+  //   author: 'Anne Rice',
+  //   title: 'Interview with the Vampire',
+  // },
+];
 
 // Redducers
 const bookReducer = (state = initialState, action) => {
@@ -22,14 +38,18 @@ const bookReducer = (state = initialState, action) => {
 };
 
 // Actions
-export const addBook = (payload) => ({
-  type: ADD_BOOK,
-  payload,
-});
+export const addBook = (value) => (dispatch) => {
+  dispatch({
+    type: ADD_BOOK,
+    payload: value,
+  });
+};
 
-export const removeBook = (payload) => ({
-  type: REMOVE_BOOK,
-  payload,
-});
+export const removeBook = (id) => (dispatch) => {
+  dispatch({
+    distype: REMOVE_BOOK,
+    payload: id,
+  });
+};
 
 export default bookReducer;
