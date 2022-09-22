@@ -22,14 +22,18 @@ const bookReducer = (state = initialState, action) => {
 };
 
 // Actions
-export const addBook = (payload) => ({
-  type: ADD_BOOK,
-  payload,
-});
+export const addBook = (value) => (dispatch) => {
+  dispatch({
+    type: ADD_BOOK,
+    payload: value,
+  });
+};
 
-export const removeBook = (payload) => ({
-  type: REMOVE_BOOK,
-  payload,
-});
+export const removeBook = (id) => (dispatch) => {
+  dispatch({
+    type: REMOVE_BOOK,
+    payload: id,
+  });
+};
 
 export default bookReducer;

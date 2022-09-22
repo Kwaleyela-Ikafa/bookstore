@@ -1,5 +1,5 @@
 import React from 'react';
-import AddBook from './BookInput';
+import AddBook from './Form';
 import BookList from './BookList';
 import Nav from './Nav';
 
