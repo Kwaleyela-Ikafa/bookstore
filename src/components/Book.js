@@ -5,12 +5,13 @@ import { removeBook } from '../redux/books/Books';
 
 const Book = ({ id, title, author }) => {
   const dispatch = useDispatch();
+
   const clickHandler = () => {
     dispatch(removeBook(id));
   };
 
   return (
-    <li key={id}>
+    <li>
       <p>{title}</p>
       <p>{author}</p>
       <button type="submit" onClick={clickHandler}>Remove</button>

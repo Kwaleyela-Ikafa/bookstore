@@ -1,21 +1,24 @@
 import React, { useState } from 'react';
-import { v4 as uuid } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/Books';
 
 const AddBook = () => {
-  const [state, setState] = useState('');
+  const [state, setState] = useState({
+    title: '',
+    author: '',
+  });
 
   const dispatch = useDispatch();
 
-  const clickHandler = () => {
+  const clickHandler = (e) => {
+    e.preventDefault();
     const newBook = {
-      id: uuid(),
-      title: '',
-      author: '',
+      id: uuidv4(),
+      ...state,
     };
-    dispatch(addBook(state, newBook));
-    setState('');
+    dispatch(addBook(newBook));
+    setState({ title: '', author: '' });
   };
 
   const changeHandler = (e) => {
@@ -32,7 +35,6 @@ const AddBook = () => {
       <form onSubmit={clickHandler}>
         <input type="text" name="title" placeholder="Book title" onChange={changeHandler} value={state.title} />
         <input type="text" name="author" placeholder="Book author" onChange={changeHandler} value={state.author} />
-        <input type="reset" />
         <button type="button" onClick={clickHandler}>Add Book</button>
       </form>
     </>
