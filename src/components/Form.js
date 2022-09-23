@@ -7,6 +7,7 @@ const AddBook = () => {
   const [state, setState] = useState({
     title: '',
     author: '',
+    category: '',
   });
 
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ const AddBook = () => {
       ...state,
     };
     dispatch(addBook(newBook));
-    setState({ title: '', author: '' });
+    setState({ title: '', author: '', category: '' });
   };
 
   const changeHandler = (e) => {
@@ -35,6 +36,14 @@ const AddBook = () => {
       <form onSubmit={clickHandler}>
         <input type="text" name="title" placeholder="Book title" onChange={changeHandler} value={state.title} />
         <input type="text" name="author" placeholder="Book author" onChange={changeHandler} value={state.author} />
+        <select name="category" onChange={changeHandler} value={state.category}>
+          <option>Select Category</option>
+          <option>Crime and Thriller</option>
+          <option>Sport</option>
+          <option>Self Development</option>
+          <option>Fantasy</option>
+          <option>Sci-fi</option>
+        </select>
         <button type="button" onClick={clickHandler}>Add Book</button>
       </form>
     </>
