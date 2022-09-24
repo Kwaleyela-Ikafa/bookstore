@@ -11,7 +11,7 @@ const BookList = () => {
   }, []);
 
   return (
-    <div>
+    <div className="mb-5 mt-5 ">
       {books.length ? books.map((book) => <Book key={book.item_id} book={book} />)
         : <p>No Books available!</p>}
     </div>
