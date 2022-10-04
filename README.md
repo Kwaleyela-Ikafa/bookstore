@@ -2,7 +2,7 @@
 
 Bookstore CMS is a single page application (SPA) that allows users to input book titles and authors, It then sends the information to the API and displays it back to the user in the UI
 ## Live Demo
-Coming Soon
+[Live Demo](https://redux-react-book-store.netlify.app/)
 
 ## Built With
 
